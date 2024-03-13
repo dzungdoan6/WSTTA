@@ -1,0 +1,29 @@
+_BASE_: "../Base-RCNN-C4.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+    NORM: BN
+  ROI_HEADS:
+    NUM_CLASSES: 3
+  BACKBONE:
+    FREEZE_AT: 2
+SOLVER:
+  STEPS: (30000,)
+  MAX_ITER: 120000
+  CHECKPOINT_PERIOD: 10000
+  IMS_PER_BATCH: 2
+  BASE_LR: 0.001
+
+DATALOADER:
+  NUM_WORKERS: 0
+
+DATASETS:
+  TRAIN: ('kitti_clear',)
+
+INPUT:
+  MIN_SIZE_TRAIN: (0,)
+  MIN_SIZE_TEST: 0
+
+OUTPUT_DIR: work_dir/kitti/clear
