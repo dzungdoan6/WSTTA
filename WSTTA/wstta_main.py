@@ -45,7 +45,7 @@ def forward_and_adapt(args, cfg, model):
     checkpointer.load(cfg.MODEL.WEIGHTS);
     optimizer = build_optimizer(cfg, model)
     
-    hl_tta = WSTTA(args, model=model, optimizer=optimizer);
+    tta = WSTTA(args, model=model, optimizer=optimizer);
     
     total_samples = len(DatasetCatalog.get(cfg.DATASETS.TRAIN[0]))
     
@@ -56,7 +56,7 @@ def forward_and_adapt(args, cfg, model):
     evaluator = COCOEvaluator(cfg.DATASETS.TRAIN[0], cfg, False, output_dir="./output/");
     evaluator.reset()
     
-    print("\n\n\n========== Perform HL-TTA with %d samples ======================" % (args.num_adapt));
+    print("\n\n\n========== Perform WSTTA with %d samples ======================" % (args.num_adapt));
     datasets = data_loader.dataset.dataset.dataset;
     np.random.seed(9999);
     indices = np.random.permutation(total_samples);
@@ -69,11 +69,11 @@ def forward_and_adapt(args, cfg, model):
             # otherwise we only perform prediction
             if idx < args.num_adapt:
                 inputs_weak = create_weak_label(inputs);  # provide weak labels
-                outputs = hl_tta.forward_then_adapt(inputs_weak);
+                outputs = tta.forward_then_adapt(inputs_weak);
                 status = "Forward and adapt sample"
                     
             else:
-                outputs = hl_tta.forward_only(inputs);
+                outputs = tta.forward_only(inputs);
                 status = "Forward sample"
             
             evaluator.process(inputs, outputs)
