@@ -46,9 +46,9 @@ After the training is finished, the source pretrained detector can be found in `
 ```
 python WSTTA/wstta_main.py --config-file configs/KITTI/kitti_faster_rcnn_wstta.yaml --imgs-dir data/kitti/fog --annos-file data/kitti/kitti_foggy_test.json --num-adapt 100 --mom-init 0.1 --mom-lb 0.005 --omega 0.99 --alpha 0.1 --psd-thr 0.8
 ```
-After the WSTTA is finished, we should obtain the results of WSTTA shown in the Table 2a
+After the WSTTA is finished, we should obtain the results of `WSTTA` shown in the Table 2a
 
-* To obtain the results of Source shown in the Table 2a
+* To obtain the results of `Source` shown in the Table 2a
 ```
 python WSTTA/wstta_main.py --config-file configs/KITTI/kitti_faster_rcnn_wstta.yaml --imgs-dir data/kitti/fog --annos-file data/kitti/kitti_foggy_test.json --num-adapt 0
 ```
