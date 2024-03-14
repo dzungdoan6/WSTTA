@@ -23,17 +23,17 @@ Our installation is based on [Detectron2's installation](https://detectron2.read
     cd [ROOT_DIR]/WSTTA
     ```
 
-# Dataset Preparation
+# Dataset preparation
 
-* Download Clear (Original) [KITTI dataset](https://www.cvlibs.net/datasets/kitti/).
+* Download KITTI [here](https://www.cvlibs.net/datasets/kitti/).
 
-* Download [KITTI-Fog](https://team.inria.fr/rits/computer-vision/weather-augment/).
+* Download KITTI-Fog [here](https://team.inria.fr/rits/computer-vision/weather-augment/).
 
 * Place all clear images to `[ROOT_DIR]/WSTTA/data/kitti/clear` and all foggy images to `[ROOT_DIR]/WSTTA/data/kitti/fog`.
 
 * Make sure `kitti_clear_train.json`, `kitti_clear_test.json`, `kitti_foggy_train.json`, and `kitti_foggy_test.json` can be found in `[ROOT_DIR]/WSTTA/data/kitti`.
 
-# Running Experiments
+# Running experiments
 
 * Train an object detector on the training set of KITTI
 
@@ -52,6 +52,3 @@ After the WSTTA is finished, we should obtain the results of `WSTTA` shown in th
 ```
 python WSTTA/wstta_main.py --config-file configs/KITTI/kitti_faster_rcnn_wstta.yaml --imgs-dir data/kitti/fog --annos-file data/kitti/kitti_foggy_test.json --num-adapt 0
 ```
-
-
-
