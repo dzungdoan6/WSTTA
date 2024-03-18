@@ -1,0 +1,12 @@
+_BASE_: "msa_synth_faster_rcnn.yaml"
+
+MODEL:
+  WEIGHTS: "work_dir/msa-synth/visible/model_0119999.pth"
+  # WEIGHTS: "work_dir/msa-synth/clear_day_dawn_night_v2/rgb/model_0119999.pth"
+
+SOLVER:
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.0001
+
+DATASETS:
+  TRAIN: ('target_data',)

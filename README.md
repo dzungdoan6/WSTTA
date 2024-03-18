@@ -22,8 +22,8 @@ Our installation is based on [Detectron2's installation](https://detectron2.read
     python -m pip install -e WSTTA
     cd [ROOT_DIR]/WSTTA
     ```
-
-# Dataset preparation
+# KITTI to KITTI-Fog
+### Dataset preparation
 
 * Download KITTI [here](https://www.cvlibs.net/datasets/kitti/).
 
@@ -33,7 +33,7 @@ Our installation is based on [Detectron2's installation](https://detectron2.read
 
 * Make sure `kitti_clear_train.json`, `kitti_clear_test.json`, `kitti_foggy_train.json`, and `kitti_foggy_test.json` can be found in `[ROOT_DIR]/WSTTA/data/kitti`.
 
-# Running experiments
+### Running experiments
 
 * Train an object detector on the training set of KITTI
 
@@ -52,3 +52,26 @@ After the WSTTA is finished, we should obtain the results of `WSTTA` shown in th
 ```
 python WSTTA/wstta_main.py --config-file configs/KITTI/kitti_faster_rcnn_wstta.yaml --imgs-dir data/kitti/fog --annos-file data/kitti/kitti_foggy_test.json --num-adapt 0
 ```
+
+# MSA-SYNTH Visible to Infrared
+
+### Dataset preparation
+* Download MSA-SYNTH [here](https://drive.google.com/file/d/1Db_zzwYvhdPDJbinAAzm8qjZlMb72OGT/view)
+
+* Extract the MSA-SYNTH dataset to `[ROOT_DIR]/WSTTA/data/`
+
+* Make sure `MSA-SYNTH/RGB/`, `MSA-SYNTH/IR/`, `MSA-SYNTH/rgb_train_cocostyle.json`, `MSA-SYNTH/rgb_test_cocostyle.json`, `MSA-SYNTH/ir_train_cocostyle.json`, and `MSA-SYNTH/ir_test_cocostyle.json` can be found in `[ROOT_DIR]/WSTTA/data/`
+
+### Running experiments
+
+* Train an object detector on the training set of Visible images
+
+```
+python WSTTA/train_detector.py --config-file configs/MSA-SYNTH/msa_synth_faster_rcnn.yaml --imgs-dir data/MSA-SYNTH/RGB --annos-file data/MSA-SYNTH/rgb_train_cocostyle.json
+```
+
+* Adapt the source pretrained detector on the testing set of Infrared images
+```
+python WSTTA/wstta_main.py --config-file configs/MSA-SYNTH/msa_synth_faster_rcnn_wstta.yaml --imgs-dir data/MSA-SYNTH/IR --annos-file data/MSA-SYNTH/ir_test_cocostyle.json --num-adapt 100 --mom-init 0.1 --mom-lb 0.005 --omega 0.94 --alpha 0.1 --psd-thr 0.8
+```
+
