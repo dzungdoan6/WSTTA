@@ -1,6 +1,6 @@
 
 # About
-This is the source code of the paper Weakly Supervised Test-Time Domain Adaptation for Object Detection
+This is the source code of the paper [Weakly Supervised Test-Time Domain Adaptation for Object Detection](https://arxiv.org/abs/2407.05607)
 
 # Installation
 Our installation is based on [Detectron2's installation](https://detectron2.readthedocs.io/en/latest/tutorials/install.html)
