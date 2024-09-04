@@ -1,7 +1,7 @@
 _BASE_: "kitti_faster_rcnn.yaml"
 
 MODEL:
-  WEIGHTS: "work_dir/kitti/clear/model_0119999.pth"
+  WEIGHTS: "work_dir/kitti/clear/model_0199999.pth"
 
 SOLVER:
   IMS_PER_BATCH: 1
