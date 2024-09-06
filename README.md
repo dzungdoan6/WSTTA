@@ -27,7 +27,7 @@ Our installation is based on [Detectron2's installation](https://detectron2.read
 
 * Download KITTI [here](https://www.cvlibs.net/datasets/kitti/).
 
-* Download KITTI-Fog [here](https://team.inria.fr/rits/computer-vision/weather-augment/).
+* Download KITTI-Fog [here](https://team.inria.fr/rits/computer-vision/weather-augment/) or download our processed foggy images [here](https://drive.google.com/file/d/1zEM08vF8a2tMtNBSqj5WhFhbvQt4rsu3/view?usp=sharing).
 
 * Place all clear images to `[ROOT_DIR]/WSTTA/data/kitti/clear` and all foggy images to `[ROOT_DIR]/WSTTA/data/kitti/fog`.
 
