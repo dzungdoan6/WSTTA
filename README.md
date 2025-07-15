@@ -6,6 +6,11 @@ This is the source code of the paper [Weakly Supervised Test-Time Domain Adaptat
     <a href="https://youtu.be/Om0lqP7T94k" target="_blank"><img src="https://img.youtube.com/vi/Om0lqP7T94k/0.jpg" alt="IMAGE ALT TEXT HERE" border="10" /></a>
 </p>
 
+<p align="center">
+    <a href="https://youtu.be/FfuqsBgTnV4" target="_blank"><img src="https://img.youtube.com/vi/FfuqsBgTnV4/0.jpg" alt="IMAGE ALT TEXT HERE" border="10" /></a>
+</p>
+
+
 # Installation
 Our installation is based on [Detectron2's installation](https://detectron2.readthedocs.io/en/latest/tutorials/install.html)
 * Clone this repo, suppose the source code is saved in `[ROOT_DIR]/WSTTA`
