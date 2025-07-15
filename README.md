@@ -2,13 +2,23 @@
 # About
 This is the source code of the paper [Weakly Supervised Test-Time Domain Adaptation for Object Detection](https://arxiv.org/abs/2407.05607)
 
-<p align="center">
-    <a href="https://youtu.be/Om0lqP7T94k" target="_blank"><img src="https://img.youtube.com/vi/Om0lqP7T94k/0.jpg" alt="IMAGE ALT TEXT HERE" border="10" /></a>
-</p>
 
-<p align="center">
-    <a href="https://youtu.be/FfuqsBgTnV4" target="_blank"><img src="https://img.youtube.com/vi/FfuqsBgTnV4/0.jpg" alt="IMAGE ALT TEXT HERE" border="10" /></a>
-</p>
+<div align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <a href="https://youtu.be/Om0lqP7T94k" target="_blank">
+        <img src="https://img.youtube.com/vi/Om0lqP7T94k/0.jpg" alt="Video 1" width="300"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://youtu.be/FfuqsBgTnV4" target="_blank">
+        <img src="https://img.youtube.com/vi/FfuqsBgTnV4/0.jpg" alt="Video 2" width="300"/>
+      </a>
+    </td>
+  </tr>
+</table>
+</div>
 
 
 # Installation
